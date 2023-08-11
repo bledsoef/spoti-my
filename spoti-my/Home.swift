@@ -82,7 +82,6 @@ struct Home: View {
                         Spacer()
                     }
                     .padding()
-                    .navigationTitle("Good evening")
                     HStack(spacing: 4) {
                         VStack {
                             ForEach(entry_row1, id: \.self.title) { item in
@@ -132,8 +131,31 @@ struct Home: View {
                     Spacer()
                 }
             }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigation) {
+                    HStack {
+                        Text("Good evening")
+                            .foregroundColor(.white)
+                            .font(.system(size: 22, weight: .bold))
+                    }
+                    
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    HStack {
+                        Image(systemName: "bell")
+                            .padding(4)
+                        Image(systemName: "clock.arrow.2.circlepath")
+                            .padding(4)
+                        Image(systemName: "gearshape")
+                            .padding(4)
+                    }
+                    .foregroundColor(.white)
+                }
+                
+            }
             
         }
+        
 
     }
         
