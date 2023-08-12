@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
     @State var tab = 1
     var activeColor = Color.white
     var inactiveColor = Color.gray
+    init() {
+        UITabBar.appearance().backgroundColor =  UIColor(CustomColors.HomeBackground.opacity(0.9))
+    }
     var body: some View {
         TabView(selection: $tab) {
                 Home()
@@ -30,7 +32,6 @@ struct ContentView: View {
                 
                 
             }
-        .background(Color.black.opacity(0.3))
         .accentColor(.white)
         .onAppear {
                     // Change the color of inactive tabs
