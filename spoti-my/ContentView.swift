@@ -30,6 +30,7 @@ struct ContentView: View {
                 
                 
             }
+        .background(Color.black.opacity(0.3))
         .accentColor(.white)
         .onAppear {
                     // Change the color of inactive tabs
