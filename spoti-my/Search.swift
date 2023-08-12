@@ -16,6 +16,7 @@ struct Search: View {
                     Button(action: {}, label: {
                         HStack {
                             Image(systemName: "magnifyingglass")
+                                .scaleEffect(1.3)
                             Text("What do you want to listen to?")
                             Spacer()
                     }
@@ -24,7 +25,7 @@ struct Search: View {
 
 
                     })
-                    .padding(12)
+                    .padding(13)
                     .background(.white)
                     .foregroundColor(.black)
                     .clipped()
