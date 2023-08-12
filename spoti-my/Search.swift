@@ -9,7 +9,42 @@ import SwiftUI
 
 struct Search: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+                CustomColors.HomeBackground.ignoresSafeArea()
+                VStack {
+                    Button(action: {}, label: {
+                        HStack {
+                            
+                        }
+
+                    })
+                    .frame(width: .infinity, height: 30)
+                    .background(.white)
+                }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigation) {
+                    HStack {
+                        Text("Search")
+                            .foregroundColor(.white)
+                            .font(.system(size: 22, weight: .bold))
+                    }
+                    
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    HStack {
+                        Image(systemName: "camera")
+                            .padding(4)
+                    }
+                    .foregroundColor(.white)
+                }
+                
+            }
+        }
+    }
+    func getRexStatus() {
+        
     }
 }
 

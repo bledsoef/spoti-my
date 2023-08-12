@@ -15,6 +15,10 @@
 		6A1730FE2A848D83004F517A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1730FD2A848D83004F517A /* Color.swift */; };
 		6A1731002A85DA10004F517A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1730FF2A85DA10004F517A /* Search.swift */; };
 		6A1731022A85DA25004F517A /* My Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1731012A85DA25004F517A /* My Library.swift */; };
+		6A1731042A8746BA004F517A /* FilterButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1731032A8746BA004F517A /* FilterButtons.swift */; };
+		6A1731062A874778004F517A /* RecentCol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1731052A874778004F517A /* RecentCol.swift */; };
+		6A1731082A8748DD004F517A /* IndieAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1731072A8748DD004F517A /* IndieAlbums.swift */; };
+		6A17310A2A874908004F517A /* JumpBackIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1731092A874908004F517A /* JumpBackIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		6A1730FD2A848D83004F517A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6A1730FF2A85DA10004F517A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		6A1731012A85DA25004F517A /* My Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Library.swift"; sourceTree = "<group>"; };
+		6A1731032A8746BA004F517A /* FilterButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtons.swift; sourceTree = "<group>"; };
+		6A1731052A874778004F517A /* RecentCol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCol.swift; sourceTree = "<group>"; };
+		6A1731072A8748DD004F517A /* IndieAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieAlbums.swift; sourceTree = "<group>"; };
+		6A1731092A874908004F517A /* JumpBackIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpBackIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +67,18 @@
 		6A1730EC2A848483004F517A /* spoti-my */ = {
 			isa = PBXGroup;
 			children = (
+				6A1731092A874908004F517A /* JumpBackIn.swift */,
+				6A1731072A8748DD004F517A /* IndieAlbums.swift */,
+				6A1731052A874778004F517A /* RecentCol.swift */,
+				6A1731032A8746BA004F517A /* FilterButtons.swift */,
 				6A1730FB2A8485EB004F517A /* Home.swift */,
 				6A1731012A85DA25004F517A /* My Library.swift */,
 				6A1730FF2A85DA10004F517A /* Search.swift */,
 				6A1730ED2A848483004F517A /* spoti_myApp.swift */,
 				6A1730EF2A848483004F517A /* ContentView.swift */,
+				6A1730FD2A848D83004F517A /* Color.swift */,
 				6A1730F12A848485004F517A /* Assets.xcassets */,
 				6A1730F32A848485004F517A /* Preview Content */,
-				6A1730FD2A848D83004F517A /* Color.swift */,
 			);
 			path = "spoti-my";
 			sourceTree = "<group>";
@@ -152,6 +164,10 @@
 				6A1730F02A848483004F517A /* ContentView.swift in Sources */,
 				6A1730FE2A848D83004F517A /* Color.swift in Sources */,
 				6A1731002A85DA10004F517A /* Search.swift in Sources */,
+				6A17310A2A874908004F517A /* JumpBackIn.swift in Sources */,
+				6A1731062A874778004F517A /* RecentCol.swift in Sources */,
+				6A1731042A8746BA004F517A /* FilterButtons.swift in Sources */,
+				6A1731082A8748DD004F517A /* IndieAlbums.swift in Sources */,
 				6A1730FC2A8485EC004F517A /* Home.swift in Sources */,
 				6A1731022A85DA25004F517A /* My Library.swift in Sources */,
 				6A1730EE2A848483004F517A /* spoti_myApp.swift in Sources */,

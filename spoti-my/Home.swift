@@ -34,100 +34,20 @@ struct Home: View {
             ZStack {
                 CustomColors.HomeBackground.ignoresSafeArea()
                 VStack {
-                    HStack() {
-                        Button(action: {
-                            getRexStatus()
-                        }) {
-                            Text("Music")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14))
-                            
-                        }
-                        .padding([.horizontal], 15)
-                        .padding([.vertical], 7)
-                        .background(CustomColors.FilterBackground)
-                        .foregroundColor(.white)
-                        .border(CustomColors.FilterBackground, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
-                        .clipShape(Capsule())
-                        
-                        Button(action: {
-                            getRexStatus()
-                        }) {
-                            Text("Podcasts & Shows")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14))
-                            
-                        }
-                        .padding([.horizontal], 15)
-                        .padding([.vertical], 7)
-                        .background(CustomColors.FilterBackground)
-                        .foregroundColor(.white)
-                        .border(CustomColors.FilterBackground, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
-                        .clipShape(Capsule())
-                        
-                        Button(action: {
-                            getRexStatus()
-                        }) {
-                            Text("Audiobooks")
-                                .foregroundColor(.white)
-                                .font(.system(size: 14))
-                            
-                        }
-                        .padding([.horizontal], 15)
-                        .padding([.vertical], 7)
-                        .background(CustomColors.FilterBackground)
-                        .foregroundColor(.white)
-                        .border(CustomColors.FilterBackground, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
-                        .clipShape(Capsule())
-                        Spacer()
-                    }
+                    FilterButtons()
                     .padding()
-                    HStack(spacing: 4) {
-                        VStack {
-                            ForEach(entry_row1, id: \.self.title) { item in
-                                HStack {
-                                    Image(item.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                    Text(item.title)
-                                    Spacer()
+                    HStack(spacing: 6) {
+                        RecentCol(entry_row: entry_row1)
+                            .padding(.leading, 10)
 
-                                }
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
-                                .background(CustomColors.FilterBackground)
-                                .cornerRadius(3)
-                                .font(.caption).fontWeight(.semibold)
+                        RecentCol(entry_row: entry_row2)
+                        
+                            .padding(.trailing, 10)
 
-                            }
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .padding(.leading, 10)
-                        VStack {
-                            ForEach(entry_row2, id: \.self.title) { item in
-                                HStack {
-                                    Image(item.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                    Text(item.title)
-                                    Spacer()
-                                        
-                                }
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
-                                .background(CustomColors.FilterBackground)
-                                .cornerRadius(3)
-                                .font(.caption).fontWeight(.semibold)
-                            }
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .padding(.trailing, 10)
-                        
-                        
-                        
-                        
-                        
                     }
+                    IndieAlbums()
+                    JumpBackIn()
+                        
                     Spacer()
                 }
             }
@@ -159,9 +79,7 @@ struct Home: View {
 
     }
         
-    func getRexStatus() {
-        
-    }
+
 }
 
 struct Home_Previews: PreviewProvider {
