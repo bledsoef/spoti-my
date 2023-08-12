@@ -32,6 +32,7 @@ struct Home: View {
         NavigationStack {
             
             ZStack {
+
                 CustomColors.HomeBackground.ignoresSafeArea()
                 VStack {
                     FilterButtons()
@@ -47,9 +48,9 @@ struct Home: View {
                     }
                     IndieAlbums()
                     JumpBackIn()
-                        
-                    Spacer()
+
                 }
+                NowListening()
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigation) {
