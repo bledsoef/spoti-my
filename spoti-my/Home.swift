@@ -36,18 +36,21 @@ struct Home: View {
                 CustomColors.HomeBackground.ignoresSafeArea()
                 VStack {
                     FilterButtons()
-                    .padding()
-                    HStack(spacing: 6) {
-                        RecentCol(entry_row: entry_row1)
-                            .padding(.leading, 10)
-
-                        RecentCol(entry_row: entry_row2)
-                        
-                            .padding(.trailing, 10)
-
+                        .padding(.top)
+                        .padding(.horizontal)
+                    ScrollView {
+                        HStack(spacing: 6) {
+                            RecentCol(entry_row: entry_row1)
+                                .padding(.leading, 10)
+                            
+                            RecentCol(entry_row: entry_row2)
+                            
+                                .padding(.trailing, 10)
+                            
+                        }
+                        IndieAlbums()
+                        JumpBackIn()
                     }
-                    IndieAlbums()
-                    JumpBackIn()
 
                 }
                 NowListening()
