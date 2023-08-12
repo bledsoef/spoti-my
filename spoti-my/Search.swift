@@ -15,12 +15,23 @@ struct Search: View {
                 VStack {
                     Button(action: {}, label: {
                         HStack {
-                            
-                        }
+                            Image(systemName: "magnifyingglass")
+                            Text("What do you want to listen to?")
+                            Spacer()
+                    }
+                    .foregroundColor(.black)
+                        
+
 
                     })
-                    .frame(width: .infinity, height: 30)
+                    .padding(12)
                     .background(.white)
+                    .foregroundColor(.black)
+                    .clipped()
+                    .cornerRadius(7)
+                    .padding(.horizontal)
+                    .padding(.top, 5)
+                    Spacer()
                 }
             }
             .toolbar {
