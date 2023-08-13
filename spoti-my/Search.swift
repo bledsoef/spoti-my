@@ -7,8 +7,26 @@
 
 import SwiftUI
 
+struct RecentSearch {
+    var title: String
+    var image: String
+    var label: String
+}
+
 struct Search: View {
+    let searches:[RecentSearch] = [
+        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
+        RecentSearch(title: "Ghais Guevara", image: "Ghais_Guevara", label: "Artist"),
+        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
+        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
+        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
+        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
+    ]
+    @State var searchQuery: String = ""
     @State var searchBarClicked: Bool = false
+    init() {
+        UITabBar.appearance().backgroundColor =  UIColor(CustomColors.HomeBackground.opacity(0.9))
+    }
     var body: some View {
         NavigationStack {
             if !searchBarClicked {
@@ -34,7 +52,67 @@ struct Search: View {
                         .cornerRadius(7)
                         .padding(.horizontal)
                         .padding(.top, 5)
-                        Spacer()
+                        ScrollView(.vertical) {
+                            HStack {
+                                Text("Browse All")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 16, weight: .bold))
+                                Spacer()
+                            }
+                            .padding()
+                            HStack {
+                                VStack {
+                                    ForEach(0..<8) { item in
+                                        VStack {
+                                            HStack {
+                                                Text("Podcasts")
+                                                    .padding(10)
+                                                    .fontWeight(.bold)
+                                                    .font(.system(size: 18))
+
+                                                Spacer()
+                                            }
+
+                                            Spacer()
+                                        }
+                                        .foregroundColor(.white)
+                                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+                                        .background(.orange)
+                                        .cornerRadius(4)
+                                        .padding(.leading)
+                                        .padding(.vertical, 4)
+                                        .padding(.trailing, 4)
+                                            
+                                    }
+                                }
+                                VStack {
+                                    ForEach(0..<8) { item in
+                                        VStack {
+                                            HStack {
+                                                Text("Charts")
+                                                    .padding(10)
+                                                    .fontWeight(.bold)
+                                                    .font(.system(size: 18))
+                                                Spacer()
+                                            }
+                                            Spacer()
+                                        }
+                                        .foregroundColor(.white)
+                                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+                                            .background(.red)
+                                            .cornerRadius(4)
+                                            .padding(.trailing)
+                                            .padding(.vertical, 4)
+                                            .padding(.leading, 4)
+                                            
+                                    }
+                                        
+                                        
+                                    
+                                }
+                            }
+                        }
+                        .background(.clear)
                     }
                 }
                 .toolbar {
@@ -59,19 +137,57 @@ struct Search: View {
             else {
                 ZStack {
                     CustomColors.HomeBackground.ignoresSafeArea()
+                    ScrollView {
+                        VStack {
+                            HStack {
+                                Text("Recent searches")
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 9)
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                Spacer()
+                            }
+                            Spacer()
+                        }
+                    }
                 }
                 .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    ToolbarItemGroup(placement: .navigation) {
                         HStack {
-                            Text("Cancel")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .bold))
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.white)
+                                    .scaleEffect(0.8)
+                                TextField("", text: $searchQuery, prompt: Text("What would you like to listen to?       ").foregroundColor(.gray))
+                                    .tint(CustomColors.SpotifyGreen)
+                                    .font(.system(size: 15))
+                                    .foregroundColor(.white)
+                                
+                                Spacer()
+                            }
+                            
+
+
                         }
+                        .padding(5)
+                        .background(CustomColors.NowListening)
+                        .cornerRadius(8)
+                        
                         
                     }
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button("Cancel") {
+                            toggleSearchBarClicked()
+                        }
+                        .foregroundColor(.white)
+                        .font(.system(size: 15, weight: .bold))
+                        .padding(.leading, 2)
+                    }
+
                 }
             }
         }
+
     }
     func toggleSearchBarClicked() {
         searchBarClicked.toggle()

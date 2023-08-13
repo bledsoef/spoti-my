@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct spoti_myApp: App {
+struct SpotiMyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

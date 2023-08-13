@@ -30,7 +30,7 @@ struct NowListening: View {
                     }
                     
                 }
-                .font(.caption2)
+                .font(.caption)
                 Spacer()
                 Image(systemName: "hifispeaker")
                     .scaleEffect(1.2)
