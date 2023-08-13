@@ -35,7 +35,7 @@ struct Home: View {
 
                 CustomColors.HomeBackground.ignoresSafeArea()
                 VStack {
-                    FilterButtons()
+                    HomeFilterButtons()
                         .padding(.top)
                         .padding(.horizontal)
                     ScrollView {

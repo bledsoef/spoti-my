@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FilterButtons: View {
+struct HomeFilterButtons: View {
     var body: some View {
         HStack {
             Button(action: {
@@ -62,8 +62,8 @@ struct FilterButtons: View {
     }
 }
 
-struct FilterButtons_Previews: PreviewProvider {
+struct HomeFilterButtons_Previews: PreviewProvider {
     static var previews: some View {
-        FilterButtons()
+        HomeFilterButtons()
     }
 }

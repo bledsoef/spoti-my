@@ -25,7 +25,7 @@ struct ContentView: View {
                         Label("Search", systemImage: "magnifyingglass")
                     }.tag(2)
                 
-                Your_Library()
+                YourLibrary()
                     .tabItem {
                         Label("Your Library", systemImage: "books.vertical.fill")
                     }.tag(3)
