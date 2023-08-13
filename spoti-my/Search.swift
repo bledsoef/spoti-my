@@ -17,13 +17,14 @@ struct Search: View {
     let searches:[RecentSearch] = [
         RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
         RecentSearch(title: "Ghais Guevara", image: "Ghais_Guevara", label: "Artist"),
-        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
-        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
-        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
-        RecentSearch(title: "Barbie the Album", image: "Barbie", label: "Album • Various Artists"),
+        RecentSearch(title: "I KNOW ?", image: "Utopia", label: "Song • Travis Scott"),
+        RecentSearch(title: "Billie Eilish", image: "Billie_Eilish", label: "Artist"),
+        RecentSearch(title: "DAMN", image: "DAMN", label: "Album • Kendrick Lamar"),
+        RecentSearch(title: "Polly", image: "Nevermind", label: "Song • Nirvana"),
     ]
     @State var searchQuery: String = ""
     @State var searchBarClicked: Bool = false
+    @FocusState private var keyboardFocused: Bool
     init() {
         UITabBar.appearance().backgroundColor =  UIColor(CustomColors.HomeBackground.opacity(0.9))
     }
@@ -147,9 +148,48 @@ struct Search: View {
                                     .fontWeight(.bold)
                                 Spacer()
                             }
+                            ForEach(searches, id: \.self.title) { search in
+                                HStack(spacing: 10) {
+                                    if search.label == "Artist" {
+                                        Image(search.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Circle())
+                                    }
+                                    else {
+                                        Image(search.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+                                    VStack(spacing: 3) {
+                                        HStack {
+                                            Text(search.title)
+                                                .foregroundColor(.white)
+                                                .font(.system(size: 15))
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text(search.label)
+                                                .foregroundColor(.gray)
+                                                .font(.system(size: 13))
+                                            Spacer()
+                                        }
+                                    }
+                                    Spacer()
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.gray)
+                                        .scaleEffect(1)
+                                        .padding(.trailing, 3)
+                                }
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 2)
+                                .frame(width: .infinity, height: 50)
+                            }
                             Spacer()
                         }
                     }
+                    .toolbarBackground(CustomColors.HomeBackground, for: .navigationBar)
+
                 }
                 .toolbar {
                     ToolbarItemGroup(placement: .navigation) {
@@ -162,6 +202,12 @@ struct Search: View {
                                     .tint(CustomColors.SpotifyGreen)
                                     .font(.system(size: 15))
                                     .foregroundColor(.white)
+                                    .focused($keyboardFocused)
+                                    .onAppear {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                            keyboardFocused = true
+                                        }
+                                    }
                                 
                                 Spacer()
                             }
