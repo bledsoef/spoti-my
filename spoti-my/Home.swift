@@ -55,6 +55,7 @@ struct Home: View {
                 }
                 NowListening()
             }
+
             .toolbar {
                 ToolbarItemGroup(placement: .navigation) {
                     HStack {
